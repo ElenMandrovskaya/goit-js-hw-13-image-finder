@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <h1>Image search by keyword</h1>
+    <h1>Image finder by keyword<span class="material-icons">search</span></h1>
     <form class="search-form" id="search-form">
       <input 
       class ="search-input"
@@ -17,9 +17,12 @@
       name="query" 
       autocomplete="off" 
       placeholder="Enter query" />
-      <button type="submit" class="search-btn">Let`s find</button>
+      <button type="submit" class="search-btn">Let`s find!</button>
     </form>
       <ul class="gallery">
       </ul>
+        <button type="button" class="load-btn is-hidden" data-action="load-more">
+          Show more...
+        </button>
   </body>
 </html>
