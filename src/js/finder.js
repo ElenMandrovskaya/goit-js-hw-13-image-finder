@@ -2,6 +2,8 @@ import API from './API.js';
 import getRefs from './getRefs.js';
 import createGallery from './createGallery.js';
 import { infoMsg, alertMsg } from './notification.js';
+import scroll from './scroll.js';
+
 // console.log(API);
 const refs = getRefs();
 
@@ -32,6 +34,8 @@ function onLoadBtn () {
       return;
     }
     createGallery(hits);
-    refs.loadBtn.classList.remove('is-hidden');
+      refs.loadBtn.classList.remove('is-hidden');
+      scroll()
   });
 };
+
