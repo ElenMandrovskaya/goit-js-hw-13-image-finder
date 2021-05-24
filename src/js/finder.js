@@ -1,6 +1,7 @@
 import API from './API.js';
 import getRefs from './getRefs.js';
 import createGallery from './createGallery.js';
+import { infoMsg, alertMsg } from './notification.js';
 // console.log(API);
 const refs = getRefs();
 
@@ -15,6 +16,7 @@ function onSearch(e) {
 
     API.getImg().then(hits => {
         if (hits.length === 0) {
+        alertMsg()
           return;
         }
         createGallery(hits)
