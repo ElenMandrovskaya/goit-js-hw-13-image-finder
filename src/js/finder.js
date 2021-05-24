@@ -3,12 +3,14 @@ import getRefs from './getRefs.js';
 import createGallery from './createGallery.js';
 import { infoMsg, alertMsg } from './notification.js';
 import scroll from './scroll.js';
+import onOpenModal from './basicLightBox.js'
 
 // console.log(API);
 const refs = getRefs();
 
 refs.form.addEventListener('submit', onSearch);
 refs.loadBtn.addEventListener('click', onLoadBtn);
+refs.gallery.addEventListener('click', onOpenModal)
 
 function onSearch(e) {
     e.preventDefault();
