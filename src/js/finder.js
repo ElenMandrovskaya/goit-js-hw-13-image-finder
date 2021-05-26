@@ -20,13 +20,17 @@ function onSearch(e) {
             return
         }
     refs.gallery.innerHTML = '';
-    API.resetPage();
+  API.resetPage();
+  refs.loadBtn.classList.add('is-hidden');
+  refs.form.reset();
+
     API.getImg().then(hits => {
         if (hits.length === 0) {
         alertMsg()
             return;
         }
-        createGallery(hits)
+      createGallery(hits);
+      refs.loadBtn.classList.remove('is-hidden');
     });
 }
 function onLoadBtn () {
