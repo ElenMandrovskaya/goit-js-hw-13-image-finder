@@ -8,6 +8,7 @@ import onOpenModal from './basicLightBox.js'
 // console.log(API);
 const refs = getRefs();
 
+
 refs.form.addEventListener('submit', onSearch);
 refs.loadBtn.addEventListener('click', onLoadBtn);
 refs.gallery.addEventListener('click', onOpenModal)
@@ -27,7 +28,7 @@ function onSearch(e) {
     API.getImg().then(hits => {
         if (hits.length === 0) {
         alertMsg()
-            return;
+            return
         }
       createGallery(hits);
       refs.loadBtn.classList.remove('is-hidden');
@@ -37,11 +38,13 @@ function onLoadBtn () {
   API.getImg().then(hits => {
     if (hits.length === 0) {
       infoMsg();
-      return;
-    }
+      return
+    };
     createGallery(hits);
-      refs.loadBtn.classList.remove('is-hidden');
-      scroll()
+    refs.loadBtn.classList.remove('is-hidden');
+    scroll();
   });
 };
 
+
+  
